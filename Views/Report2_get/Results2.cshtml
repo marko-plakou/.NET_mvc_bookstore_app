@@ -1,0 +1,37 @@
+﻿@using bookstore_app.Models
+@{
+    ViewBag.Title = "Results2";
+}
+
+
+<h2>Results2</h2>
+<br /><br /><br /><br /><br /><br />
+<h2>Report 2</h2>
+
+<p><b>Results</b></p>
+@if (ViewBag.Resultset2 == null)
+{
+    @Html.Raw("No data!")
+}
+
+<table class="table">
+    <tr>
+        <th>Order Date</th>
+        <th>Order ID</th>
+        <th>Store Name</th>
+        <th>Title</th>
+
+    </tr>
+    @foreach (Report2_post report in ViewBag.Resultset2)
+    {
+        <tr>
+            <td>@report.ord_date</td>
+            <td>@report.ord_num</td>
+            <td>@report.stor_name</td>
+            <td>@report.title</td>
+
+        </tr>
+
+    }
+</table>
+
